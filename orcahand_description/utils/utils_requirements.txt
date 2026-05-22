@@ -1,4 +1,0 @@
-trimesh
-fast_simplification
-tabulate
-termcolor

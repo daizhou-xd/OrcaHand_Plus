@@ -39,6 +39,28 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    .project-section {
+      border-top: 1px solid #eeeeee;
+    }
+
+    .project-media-card {
+      height: 100%;
+    }
+
+    .project-media-card img {
+      background: #f7f7f7;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: block;
+      width: 100%;
+    }
+
+    .project-media-card .caption {
+      color: #4a4a4a;
+      margin-top: 0.75rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -209,166 +231,135 @@
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
 
-<section class="section">
+<section class="section project-section" id="calibration">
   <div class="container is-max-desktop">
-
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Maximum Position &amp; Current Calibration</h2>
+      <p>
+        The calibration workflow records reliable joint limits and current thresholds before motion
+        execution. Joint extrema are saved by stepping each servo from the neutral position to its
+        maximum and minimum positions, while current calibration captures peak current during
+        repeated fist-open cycles.
+      </p>
+    </div>
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+        <figure class="project-media-card">
+          <img src="./static/images/关节极值位置标定.gif"
+               alt="Joint maximum and minimum position calibration demo.">
+          <figcaption class="caption has-text-centered">
+            Joint extrema calibration
+          </figcaption>
+        </figure>
       </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
+        <figure class="project-media-card">
+          <img src="./static/images/握拳.gif"
+               alt="Fist motion used for maximum current calibration.">
+          <figcaption class="caption has-text-centered">
+            Maximum current calibration
+          </figcaption>
+        </figure>
       </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{zhou2026my_orcahandplusplus,
-  author    = {Zhou, Dai and Gao, Zuxiang},
-  title     = {My_OrcaHand++},
-  year      = {2026},
-}</code></pre>
+<section class="section project-section" id="motion-programming">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Programmed Motions</h2>
+      <p>
+        The upper-computer interface includes a set of reusable demonstration motions for testing
+        joint coordination, tendon routing, servo response, and hand-level behavior.
+      </p>
+    </div>
+    <div class="columns is-centered is-multiline">
+      <div class="column is-one-third">
+        <figure class="project-media-card">
+          <img src="./static/images/手指遍历.gif"
+               alt="Finger traversal motion demo.">
+          <figcaption class="caption has-text-centered">
+            Finger traversal
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-one-third">
+        <figure class="project-media-card">
+          <img src="./static/images/前后摆手.gif"
+               alt="Forward and backward waving motion demo.">
+          <figcaption class="caption has-text-centered">
+            Forward and backward waving
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-one-third">
+        <figure class="project-media-card">
+          <img src="./static/images/左右摆手.gif"
+               alt="Left and right waving motion demo.">
+          <figcaption class="caption has-text-centered">
+            Left and right waving
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-one-third">
+        <figure class="project-media-card">
+          <img src="./static/images/握拳.gif"
+               alt="Fist closing motion demo.">
+          <figcaption class="caption has-text-centered">
+            Fist closing
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-one-third">
+        <figure class="project-media-card">
+          <img src="./static/images/对指遍历2.gif"
+               alt="Thumb-to-finger traversal motion demo.">
+          <figcaption class="caption has-text-centered">
+            Thumb-to-finger traversal
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section project-section" id="gesture-guided-grasping">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Gesture-Guided Grasping</h2>
+      <p>
+        MediaPipe Hands estimates human hand landmarks that are mapped to the robotic hand joints.
+        Weighted MCP/PIP/DIP fusion and exponential moving average smoothing allow the hand to follow
+        gestures while producing stable grasping motions.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <figure class="project-media-card">
+          <img src="./static/images/卷纸抓取.gif"
+               alt="Gesture-guided grasping demo with a paper roll.">
+          <figcaption class="caption has-text-centered">
+            Paper roll grasp
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column">
+        <figure class="project-media-card">
+          <img src="./static/images/柿子娃娃抓取.gif"
+               alt="Gesture-guided grasping demo with a plush toy.">
+          <figcaption class="caption has-text-centered">
+            Plush toy grasp
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>
 

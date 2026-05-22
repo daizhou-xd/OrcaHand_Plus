@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -80,7 +80,7 @@
     </div>
 
   </div>
-</nav>
+</nav> -->
 
 
 <section class="hero">
@@ -110,22 +110,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
     </div>
   </div>
 </section>
@@ -197,31 +181,28 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            My_OrcaHand++ is a customized robotic hand control project built around Feetech servos,
+            visual calibration, motion programming, and gesture-guided grasping. The system migrates
+            the original control interface to the corresponding Feetech servo commands and integrates
+            the main hardware functions into a unified desktop control UI.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            The project implements two key calibration procedures. For joint range calibration, each
+            joint is traversed from the neutral position of 2048 toward its maximum position with a
+            step size of +5, saved by keyboard confirmation, and then traversed toward its minimum
+            position with a step size of -5 before moving to the next joint. For current calibration,
+            the hand repeatedly performs five fist-open cycles, because the fist motion produces the
+            largest joint current; the measured maximum currents are written back to the configuration
+            file to reduce unnecessary over-current protection triggers.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            The upper-computer interface includes demonstrations such as finger traversal, forward
+            and backward waving, left and right waving, fist closing, and thumb-to-finger traversal.
+            For gesture recognition and gesture-guided grasping, the system uses MediaPipe Hands to
+            estimate 21 hand landmarks, defines the palm plane and base coordinate frame, maps the
+            landmarks to 17 robotic hand joints, and converts joint angles into calibrated servo
+            ranges. A weighted mapping fuses MCP, PIP, and DIP flexion into two servo commands, while
+            an exponential moving average smooths the motion during execution.
           </p>
         </div>
       </div>

@@ -46,19 +46,34 @@
 
     .project-media-card {
       height: 100%;
+      margin: 0 auto;
+      max-width: 180px;
     }
 
     .project-media-card img {
+      aspect-ratio: 4 / 3;
       background: #f7f7f7;
       border-radius: 8px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       display: block;
+      height: 135px;
+      object-fit: cover;
       width: 100%;
     }
 
     .project-media-card .caption {
       color: #4a4a4a;
       margin-top: 0.75rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .project-media-card {
+        max-width: 220px;
+      }
+
+      .project-media-card img {
+        height: 165px;
+      }
     }
   </style>
 </head>
@@ -137,7 +152,7 @@
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -192,7 +207,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -246,8 +261,8 @@
         repeated fist-open cycles.
       </p>
     </div>
-    <div class="columns is-centered">
-      <div class="column">
+    <div class="columns is-centered is-multiline">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/关节极值位置标定.gif"
                alt="Joint maximum and minimum position calibration demo.">
@@ -256,7 +271,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/握拳.gif"
                alt="Fist motion used for maximum current calibration.">
@@ -280,7 +295,7 @@
       </p>
     </div>
     <div class="columns is-centered is-multiline">
-      <div class="column is-one-third">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/手指遍历.gif"
                alt="Finger traversal motion demo.">
@@ -289,7 +304,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column is-one-third">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/前后摆手.gif"
                alt="Forward and backward waving motion demo.">
@@ -298,7 +313,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column is-one-third">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/左右摆手.gif"
                alt="Left and right waving motion demo.">
@@ -307,7 +322,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column is-one-third">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/握拳.gif"
                alt="Fist closing motion demo.">
@@ -316,7 +331,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column is-one-third">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/对指遍历2.gif"
                alt="Thumb-to-finger traversal motion demo.">
@@ -340,8 +355,8 @@
         gestures while producing stable grasping motions.
       </p>
     </div>
-    <div class="columns is-centered">
-      <div class="column">
+    <div class="columns is-centered is-multiline">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/卷纸抓取.gif"
                alt="Gesture-guided grasping demo with a paper roll.">
@@ -350,7 +365,7 @@
           </figcaption>
         </figure>
       </div>
-      <div class="column">
+      <div class="column is-one-fifth-desktop is-one-third-tablet is-half-mobile">
         <figure class="project-media-card">
           <img src="./static/images/柿子娃娃抓取.gif"
                alt="Gesture-guided grasping demo with a plush toy.">

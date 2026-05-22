@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import mediapipe; print\\('mediapipe', mediapipe.__version__\\)\")",
+      "Bash(python -c \"import mediapipe as mp; print\\(dir\\(mp\\)\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('hand_tracker.py', doraise=True\\); print\\('OK'\\)\")",
+      "WebFetch(domain:github.com)",
+      "Read(//tmp/**)",
+      "Read(//d/tmp/**)",
+      "Read(//d/Github_Project/**)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('orca_core/feetech_client.py' if False else 'orca_core/hardware/feetech_client.py', doraise=True\\)\")",
+      "Bash(python -m py_compile \"orca_core/hardware/feetech_client.py\")",
+      "Bash(python -m py_compile \"orca_core/overcurrent_protection.py\")",
+      "Bash(python -m py_compile \"orca_core/hardware_hand.py\")",
+      "Bash(python -m py_compile \"hand_mapper.py\")",
+      "Bash(python -m py_compile \"main_grasp.py\")",
+      "Bash(python -m py_compile \"orca_core/hardware/feetech/sms_sts.py\")",
+      "Bash(python -m py_compile \"orca_core/utils/utils.py\")",
+      "Bash(taskkill /F /IM python.exe)",
+      "Bash(python -m py_compile \"orca_core/hardware/feetech/port_handler.py\")",
+      "Bash(powershell -Command \"Stop-Process -Id 15192 -Force; Write-Host 'Killed PID 15192'; Start-Sleep 1; Get-Process python* -ErrorAction SilentlyContinue | Format-Table Id, ProcessName\")",
+      "Bash(powershell -Command \"Stop-Process -Id 17424 -Force -ErrorAction SilentlyContinue; Write-Host 'killed'\")",
+      "Bash(python -c \"import yourdfpy; print\\('yourdfpy:', yourdfpy.__version__\\)\")",
+      "Bash(python -c \"import trimesh; print\\('trimesh:', trimesh.__version__\\)\")",
+      "Bash(python -c \"import pyrender; print\\('pyrender ok'\\)\")",
+      "Bash(python -c \"import pybullet; print\\('pybullet ok'\\)\")",
+      "Bash(python -c \"import PyQt5; print\\('PyQt5 ok'\\)\")"
+    ]
+  }
+}

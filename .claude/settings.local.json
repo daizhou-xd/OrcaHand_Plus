@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"from vtkmodules.tk.vtkTkRenderWindowInteractor import vtkTkRenderWindowInteractor; print\\('vtkTk OK'\\)\")",
+      "Bash(python -c \"import vtk; print\\('vtk version:', vtk.vtkVersion.GetVTKVersion\\(\\)\\)\")",
+      "Bash(python py_action/gui/_test_urdf.py)",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(python -c \"import yourdfpy; print\\('yourdfpy ok'\\)\")",
+      "Bash(where pip *)",
+      "Bash(where python *)",
+      "Bash(python -m pip install yourdfpy trimesh pyglet)",
+      "Bash(python -c \"from yourdfpy import URDF; print\\('yourdfpy OK'\\)\")",
+      "Bash(python py_action/gui/_explore_urdf.py)",
+      "Bash(python py_action/gui/_map_joints.py)",
+      "Bash(timeout 8 python py_action/gui/_test_pyglet_thread.py)",
+      "Bash(timeout 20 python py_action/gui/_test_viewer.py)",
+      "Bash(python -c \"import pyglet; print\\(pyglet.version\\); from pyglet.graphics import vertex_list; print\\('vertex_list found'\\)\")",
+      "Bash(python -c \"from pyglet.graphics import draw_indexed; help\\(draw_indexed\\)\")",
+      "Bash(python -c \"from pyglet.graphics import draw; help\\(draw\\)\")",
+      "Bash(timeout 8 python py_action/gui/_test_gl.py)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('py_action/gui/app.py', doraise=True\\); print\\('Syntax OK'\\)\")",
+      "Bash(python py_action/gui/_fix_quotes.py)",
+      "Bash(python)",
+      "Bash(python py_action/gui/_cleanup_app.py)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

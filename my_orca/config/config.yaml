@@ -1,0 +1,201 @@
+port: COM13
+baudrate: 1000000
+max_current: 800
+type: right
+control_mode: multi_turn_position
+motor_type: feetech
+
+motor_ids:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+
+joint_ids:
+- thumb_mcp
+- thumb_abd
+- thumb_pip
+- thumb_dip
+- index_abd
+- index_mcp
+- index_pip
+- middle_abd
+- middle_mcp
+- middle_pip
+- ring_abd
+- ring_mcp
+- ring_pip
+- pinky_abd
+- pinky_mcp
+- pinky_pip
+- wrist
+
+joint_to_motor_map:
+  thumb_mcp: 15
+  thumb_abd: 13
+  thumb_pip: 14
+  thumb_dip: -16
+  index_abd: 3
+  index_mcp: 2
+  index_pip: -1
+  middle_abd: 4
+  middle_mcp: 9
+  middle_pip: -8
+  ring_abd: -12
+  ring_mcp: 10
+  ring_pip: -11
+  pinky_abd: 5
+  pinky_mcp: 7
+  pinky_pip: 6
+  wrist: -17
+
+# 机械限位 raw 0-4095，标定后填入实际值
+joint_limits:
+  thumb_mcp: [1763, 2352]
+  thumb_abd: [1485, 2425]
+  thumb_pip: [1460, 2356]
+  thumb_dip: [1849, 2757]
+  index_abd: [1908, 2349]
+  index_mcp: [1432, 2270]
+  index_pip: [1889, 2615]
+  middle_abd: [1788, 2215]
+  middle_mcp: [1366, 2098]
+  middle_pip: [1907, 2674]
+  ring_abd: [1837, 2175]
+  ring_mcp: [1549, 2270]
+  ring_pip: [1732, 2623]
+  pinky_abd: [1788, 2286]
+  pinky_mcp: [1381, 2234]
+  pinky_pip: [1458, 2238]
+  wrist: [1646, 2666]
+
+# 中立位 角度 0-360°（180° = 舵机中点 2047）
+neutral_position:
+  thumb_mcp: 180
+  thumb_abd: 180
+  thumb_pip: 180
+  thumb_dip: 180
+  index_abd: 180
+  index_mcp: 180
+  index_pip: 180
+  middle_abd: 180
+  middle_mcp: 180
+  middle_pip: 180
+  ring_abd: 180
+  ring_mcp: 180
+  ring_pip: 180
+  pinky_abd: 180
+  pinky_mcp: 180
+  pinky_pip: 180
+  wrist: 180
+
+calibration_current: 120
+calibration_step_size: 0.03
+calibration_step_period: 0.06
+calibration_num_stable: 10
+calibration_threshold: 0.02
+
+calibration_sequence:
+- step: 1
+  joints:
+    thumb_mcp: flex
+- step: 2
+  joints:
+    thumb_mcp: extend
+- step: 3
+  joints:
+    thumb_abd: flex
+- step: 4
+  joints:
+    thumb_abd: extend
+- step: 5
+  joints:
+    thumb_pip: flex
+- step: 6
+  joints:
+    thumb_pip: extend
+- step: 7
+  joints:
+    thumb_dip: flex
+- step: 8
+  joints:
+    thumb_dip: extend
+- step: 9
+  joints:
+    index_abd: flex
+    middle_abd: flex
+    ring_abd: flex
+    pinky_abd: flex
+- step: 10
+  joints:
+    index_abd: extend
+    middle_abd: extend
+    ring_abd: extend
+    pinky_abd: extend
+- step: 11
+  joints:
+    index_mcp: flex
+- step: 12
+  joints:
+    index_mcp: extend
+- step: 13
+  joints:
+    index_pip: flex
+- step: 14
+  joints:
+    index_pip: extend
+- step: 15
+  joints:
+    middle_mcp: flex
+- step: 16
+  joints:
+    middle_mcp: extend
+- step: 17
+  joints:
+    middle_pip: flex
+- step: 18
+  joints:
+    middle_pip: extend
+- step: 19
+  joints:
+    ring_mcp: flex
+- step: 20
+  joints:
+    ring_mcp: extend
+- step: 21
+  joints:
+    ring_pip: flex
+- step: 22
+  joints:
+    ring_pip: extend
+- step: 23
+  joints:
+    pinky_mcp: flex
+- step: 24
+  joints:
+    pinky_mcp: extend
+- step: 25
+  joints:
+    pinky_pip: flex
+- step: 26
+  joints:
+    pinky_pip: extend
+- step: 27
+  joints:
+    wrist: flex
+- step: 28
+  joints:
+    wrist: extend

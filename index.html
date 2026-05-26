@@ -241,7 +241,7 @@
             estimate 21 hand landmarks, defines the palm plane and base coordinate frame, maps the
             landmarks to 17 robotic hand joints, and converts joint angles into calibrated servo
             ranges. A weighted mapping fuses MCP, PIP, and DIP flexion into two servo commands, while
-            an exponential moving average smooths the motion during execution.
+            an exponential moving average (EMA) smooths the motion during execution.
           </p>
         </div>
       </div>
@@ -353,7 +353,7 @@
       <h2 class="title is-3">Gesture-Guided Grasping</h2>
       <p>
         MediaPipe Hands estimates human hand landmarks that are mapped to the robotic hand joints.
-        Weighted MCP/PIP/DIP fusion and exponential moving average smoothing allow the hand to follow
+        Weighted MCP/PIP/DIP fusion and exponential moving average (EMA) smoothing allow the hand to follow
         gestures while producing stable grasping motions.
       </p>
     </div>
